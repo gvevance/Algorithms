@@ -2,7 +2,8 @@
 Selection sort is an O(n^2) sorting algorithm. The logic is to go over the array from arr[1] to arr[n-1], 
 compare it with the elements to the left, and swap it into the right position (if a swap is needed). At the 
 end of the kth iteration, the element arr[k] will be in the right position considering only the elements from 
-arr[0...k]. In the worst-case, it takes n(n-1)/2 steps. So O(n^2). '''
+arr[0...k]. So the fact that sorting is being done might be seen only in the last step. In the worst-case, 
+it takes n(n-1)/2 steps. So O(n^2). '''
 
 def insertion_sort(A,l,r):
     ''' Convention is that array elements are indexed from l to r-1. '''
