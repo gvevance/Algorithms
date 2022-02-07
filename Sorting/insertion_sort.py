@@ -10,8 +10,9 @@ def insertion_sort(A,l,r):
     
     for i in range(l+1,r):
         j = i
-        while A[j] < A[j-1] :
-            A[j],A[j-1] = A[j-1],A[j]
+        while j>0 :
+            if (A[j] < A[j-1]) :
+                A[j],A[j-1] = A[j-1],A[j]
             j = j-1
     
     return A
