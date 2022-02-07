@@ -1,6 +1,6 @@
 def factorial(n):
 
-    # base case
+    # base case should be 0. n=1 is wrong. If testcase contains n=0 => dead.
     if n == 1 :
         return 1
 
