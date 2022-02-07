@@ -26,7 +26,7 @@ def partition(A,l,r) :
 
 def quicksort_rec(A,l,r):
 
-    if l >= r-1 :
+    if l >= r-1 :       # l = r when the pivot happens to be an extreme value
         return A
 
     lptr = partition(A,l,r)
