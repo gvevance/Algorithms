@@ -46,8 +46,21 @@ def main():
         print("Wrong input entered. Aborting ...")
         exit()
 
-    print(bubble_sort(A,0,len(A)))
-    print(bubble_sort_optimised(A,0,len(A)))
+    A_sorted = bubble_sort(A,0,len(A))
+    print(A_sorted)
+    
+    if sorted(A) == A_sorted :
+        print("\nSort algorithm successful.")
+    else :
+        print("\nSort algorithm unsuccessful.")
+
+    A_sorted = bubble_sort_optimised(A,0,len(A))
+    print(A_sorted)
+    
+    if sorted(A) == A_sorted :
+        print("\nSort algorithm successful.")
+    else :
+        print("\nSort algorithm unsuccessful.")
 
 if __name__ == "__main__" :
     main()

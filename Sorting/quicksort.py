@@ -16,6 +16,11 @@ def main():
 
     print(A_sorted)
 
+    if sorted(A) == A_sorted :
+        print("\nSort algorithm successful.\n")
+    else :
+        print("\nSort algorithm unsuccessful.\n")
+    
 
 
 if __name__ == "__main__":

@@ -6,13 +6,13 @@ def merge(L,m,R,n) :
     i = j = k = 0
     merged=[]
 
-    while(k < m+n):         # merged array is completely filled
+    while(k < m+n):                     # merged array is completely filled
 
-        if (j == n) :       # Note : we must check these conditions first
+        if (j == n) :                   # Note : we must check these conditions first
             merged.append(L[i])
             i,k = i+1,k+1
         
-        elif (i == m)  :    # Note : we must check these conditions first
+        elif (i == m)  :                # Note : we must check these conditions first
             merged.append(R[j])
             j,k = j+1,k+1
 
@@ -30,10 +30,10 @@ def merge(L,m,R,n) :
 def merge_sort_rec(A,l,r):
     
     if l == r-1 :
-        return [A[l]]       # must return it as an array and not the number
+        return [A[l]]                   # must return it as an array and not the number
 
-    mid = (l+r)//2          # integer division
-    L = merge_sort_rec(A,l,mid)
+    mid = (l+r)//2                      # integer division
+    L = merge_sort_rec(A,l,mid)         # not chopping into pieces but the indices at the virtual chops are sent
     R = merge_sort_rec(A,mid,r)
 
     return merge(L,mid-l,R,r-mid)       # mid-l and r-mid are the sizes of L and R pieces    
@@ -44,6 +44,11 @@ def main():
     A_sorted = merge_sort_rec(A,0,len(A))
 
     print(A_sorted)
+
+    if sorted(A) == A_sorted :
+        print("\nSort algorithm successful.\n")
+    else :
+        print("\nSort algorithm unsuccessful.\n")
 
 
 

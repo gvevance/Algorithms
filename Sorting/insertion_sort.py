@@ -25,7 +25,14 @@ def main():
         print("Wrong input entered. Aborting ...")
         exit()
 
-    print(insertion_sort(A,0,len(A)))
+    A_sorted = insertion_sort(A,0,len(A))
+    print(A_sorted)
+
+    if sorted(A) == A_sorted :
+        print("\nSort algorithm successful.\n")
+    else :
+        print("\nSort algorithm unsuccessful.\n")
+
 
 if __name__ == "__main__" :
     main()
