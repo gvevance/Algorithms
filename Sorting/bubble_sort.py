@@ -50,17 +50,17 @@ def main():
     print(A_sorted)
     
     if sorted(A) == A_sorted :
-        print("\nSort algorithm successful.")
+        print("\nSort algorithm successful.\n")
     else :
-        print("\nSort algorithm unsuccessful.")
+        print("\nSort algorithm unsuccessful.\n")
 
     A_sorted = bubble_sort_optimised(A,0,len(A))
     print(A_sorted)
     
     if sorted(A) == A_sorted :
-        print("\nSort algorithm successful.")
+        print("\nSort algorithm successful.\n")
     else :
-        print("\nSort algorithm unsuccessful.")
+        print("\nSort algorithm unsuccessful.\n")
 
 if __name__ == "__main__" :
     main()
