@@ -1,12 +1,42 @@
-''' Worst-case O(nlogn) algorithm even if n is not a power of 2. Drawback is it is not in-place. '''
+''' Worst-case O(nlogn) algorithm even if n is not a power of 2. Drawback is it does not sort in-place. '''
 
 
 def merge(L,m,R,n) :
-    pass
+    
+    i = j = k = 0
+    merged=[]
+
+    while(k < m+n):         # merged array is completely filled
+
+        if (j == n) :       # Note : we must check these conditions first
+            merged.append(L[i])
+            i,k = i+1,k+1
+        
+        elif (i == m)  :    # Note : we must check these conditions first
+            merged.append(R[j])
+            j,k = j+1,k+1
+
+        elif L[i] <= R[j] :
+            merged.append(L[i])
+            i,k = i+1,k+1
+
+        elif L[i] > R[j] :
+            merged.append(R[j])
+            j,k = j+1,k+1
+
+    return merged
 
 
 def merge_sort_rec(A,l,r):
-    pass    
+    
+    if l == r-1 :
+        return [A[l]]       # must return it as an array and not the number
+
+    mid = (l+r)//2          # integer division
+    L = merge_sort_rec(A,l,mid)
+    R = merge_sort_rec(A,mid,r)
+
+    return merge(L,mid-l,R,r-mid)       # mid-l and r-mid are the sizes of L and R pieces    
 
 
 def main():
