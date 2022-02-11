@@ -4,7 +4,6 @@ dic = { 1:1 ,
         2:1 }   # base cases
 
 def fibonacci(n,smart=False) :
-    ''' this is a really really bad recursive algorithm - O(2^n)'''
 
     if smart :
         if n not in dic :
@@ -13,7 +12,8 @@ def fibonacci(n,smart=False) :
         else :
             ans = dic[n]
     
-    else :
+    else :    
+        ''' this is a really really bad recursive algorithm - O(2^n) '''
 
         if n == 1 or n == 2 :       # base cases
             return 1

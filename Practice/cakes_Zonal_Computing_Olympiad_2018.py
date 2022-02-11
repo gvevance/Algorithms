@@ -19,9 +19,11 @@ Solution hint
 Sort the intervals and check for overlaps.
 
 Input format
-The first line of each test case contains three integers C, N and K denoting the number of cakes, number of children and K, respectively.
+The first line of each test case contains three integers C, N and K denoting the number of cakes, number of children 
+and K, respectively.
 
-The i-th of the next N lines contains two space separated integers Si and Ei which denotes the initial decision of Child i. That is, Child i wants to eat from cake Si to cake Ei.
+The i-th of the next N lines contains two space separated integers Si and Ei which denotes the initial decision of 
+Child i. That is, Child i wants to eat from cake Si to cake Ei.
 
 Output format
 For each test case, output a single line containing "Good" or "Bad".
@@ -112,11 +114,11 @@ for i in range(N):
 
 # sort based on first values of elemenets of list
 cake_list_s = merge_sort(cake_list,0,N)
-print(cake_list_s)
+# print(cake_list_s)
 
 if K == 0 :     # just check if there is no overlap
     for idx in range(N-1):
-        if cake_list_s[idx+1][1] > cake_list_s[idx][1] :
+        if cake_list_s[idx+1][0] > cake_list_s[idx][1] :
             continue
         else :
             print("Bad")
@@ -126,17 +128,25 @@ if K == 0 :     # just check if there is no overlap
 
 elif K == 1 :
     
-    # case 1 - if some chunk has overlap on both sides, it has to be moved to some other vacant spot
-    # case 2 - if overlap is only on one side
-    
-    count = 0
-    gaps_list = []      # size will be N+1
+    # check overlaps. If there are more than 2 overlaps, then print("Bad")
 
-    gaps_list.append([cake_list_s[0][1] - 1])       # store left-most gap
+    overlaps = []
+    dummy = []
+    for elem in cake_list_s :
+        dummy.append((elem[0],1))
+        dummy.append((elem[1],-1))
+    dummy.sort(key = lambda i : (i[0],-i[1]))
+    # print(dummy)
 
-    for idx in range(1,N-1):
-        pass
+    overlap_count = 0
+    for elem in dummy :
+        overlap_count += elem[1]
+
+        if overlap_count == 3 :
+            print("Bad")
+            exit()
             
+    # now no 3 overlaps
 
          
 
