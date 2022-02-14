@@ -1,9 +1,11 @@
 ''' Worst-case O(nlogn) algorithm even if n is not a power of 2. Drawback is it does not sort in-place. '''
 
 
-def merge(L,m,R,n) :
+def merge(L,R) :
     
-    i = j = k = 0
+    m = len(L)
+    n = len(R)
+    i,j,k = 0,0,0
     merged=[]
 
     while(k < m+n):                     # merged array is completely filled
