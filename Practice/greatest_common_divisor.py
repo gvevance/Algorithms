@@ -1,4 +1,7 @@
 '''
+
+Programming and DSA using Python NPTEL
+
 Naive algo is straight-forward. But with some ideas to optimise for time taken.
 Euclid's algorithm is a much more efficient recursive (or iterative) algorithm. '''
 

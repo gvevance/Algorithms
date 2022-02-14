@@ -1,4 +1,6 @@
 '''
+Programming and DSA using Python NPTEL
+
 A list of numbers is said to be a hill if it consists of an ascending sequence followed by a descending sequence, 
 where each of the sequences is of length at least two. Similarly, a list of numbers is said to be a valley if it 
 consists of an descending sequence followed by an ascending sequence. You can assume that consecutive numbers in 
@@ -22,15 +24,23 @@ False   '''
 
 def hillvalley(l):
   
+    if len(l) < 3 :
+        return False
+
     crossover = 0
     for i in range(1,len(l)-1):
         if l[i] > l[i-1] and l[i+1] < l[i] :
             crossover += 1
+            if crossover > 1 :
+                return False
+
         elif l[i] < l[i-1] and l[i+1] > l[i] :
             crossover += 1
+            if crossover > 1 :
+                return False
       
-    if crossover != 1 :
-        return False
-    else :
+    if crossover :
         return True
+    else :
+        return False
     

@@ -1,4 +1,7 @@
-'''Moving Intervals
+'''
+Design and Analysis of Algorithms NPTEL
+
+Moving Intervals
 
 Zonal Computing Olympiad 2018
 
@@ -147,6 +150,9 @@ elif K == 1 :
             exit()
             
     # now no 3 overlaps
+    # find out the pairs of overlapping chunks
+
+    
 
          
 
