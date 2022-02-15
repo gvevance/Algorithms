@@ -31,6 +31,7 @@ def BFS_list(A_list,vertex) :
     visited = [0 for _ in range(len(A_list))]
     Q = deque()
     Q.append(vertex)
+    visited[vertex] = 1
 
     while Q :
         i = Q.popleft()
@@ -42,6 +43,27 @@ def BFS_list(A_list,vertex) :
     return [i for i in range(len(A_list)) if (visited[i] == 1 and i != vertex)]
 
 
+def BFS_list_levels(A_list,vertex) :
+    ''' A_list = adjacency list
+        vertex = vertex to search path to '''
+
+    visited = [0 for _ in range(len(A_list))]
+    level = [-1 for _ in range(len(A_list))]
+    Q = deque()
+    Q.append(vertex)
+    visited[vertex],level[vertex] = 1,1
+
+    while Q :
+        i = Q.popleft()
+        for j in A_list[i] :
+            if visited[j] == 0 :
+                visited[j] = 1
+                level[j] = level[i] + 1
+                Q.append(j)
+    
+    return [(i,level[i]) for i in range(len(A_list)) if (visited[i] == 1 and i != vertex)]
+
+
 if __name__ == "__main__" :
     
     vertex = 3
@@ -49,3 +71,4 @@ if __name__ == "__main__" :
     print(BFS_matrix(A_mat,vertex))
     A_list = [[1,2],[0,2],[0,1],[4],[3]]
     print(BFS_list(A_list,vertex))
+    print(BFS_list_levels(A_list,vertex))
