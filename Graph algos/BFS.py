@@ -25,7 +25,7 @@ def BFS_matrix(A_mat,vertex):
 
 
 def BFS_list(A_list,vertex) :
-    ''' A_mat = adjacency matrix
+    ''' A_list = adjacency list
         vertex = vertex to search path to '''
 
     visited = [0 for _ in range(len(A_list))]
