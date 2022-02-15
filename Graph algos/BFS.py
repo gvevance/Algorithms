@@ -20,6 +20,7 @@ def BFS_matrix(A_mat,vertex):
             if A_mat[i][j] == 1 and visited[j] == 0 :
                 visited[j] = 1
                 Q.append(j)
+                # print(j)
     
     return [i for i in range(len(A_mat)) if ( visited[i] and i != vertex ) ]
 
@@ -39,6 +40,7 @@ def BFS_list(A_list,vertex) :
             if visited[j] == 0 :
                 visited[j] = 1
                 Q.append(j)
+                # print(j)
     
     return [i for i in range(len(A_list)) if (visited[i] == 1 and i != vertex)]
 
@@ -60,15 +62,16 @@ def BFS_list_levels(A_list,vertex) :
                 visited[j] = 1
                 level[j] = level[i] + 1
                 Q.append(j)
+                # print(j)
     
     return [(i,level[i]) for i in range(len(A_list)) if (visited[i] == 1 and i != vertex)]
 
 
 if __name__ == "__main__" :
     
-    vertex = 3
-    A_mat = [[0,1,1,0,0],[1,0,1,0,0],[1,1,0,0,0],[0,0,0,0,1],[0,0,0,1,0]]
+    vertex = 0
+    A_mat = [[0,1,1,0,0],[1,0,0,0,1],[1,0,0,1,0],[0,0,1,0,0],[0,1,0,0,0]]
     print(BFS_matrix(A_mat,vertex))
-    A_list = [[1,2],[0,2],[0,1],[4],[3]]
+    A_list = [[1,2],[0,4],[0,3],[2],[1]]
     print(BFS_list(A_list,vertex))
     print(BFS_list_levels(A_list,vertex))
